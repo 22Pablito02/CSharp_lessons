@@ -46,11 +46,11 @@ if (num % 2 == 0){
 */
 
 // Задача 8
-
+/*
 int num = Convert.ToInt32(Console.ReadLine());
 int i = 2;
-int temp = 0;
 while (i <= num){
     Console.Write(i + " ");
     i = i + 2;
 }
+*/
