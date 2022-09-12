@@ -20,7 +20,7 @@ int raising(int number, int degree){
 */
 
 //Задача 27
-
+/*
 int num = prompt("Введите число: ");
 Console.WriteLine(sum(num));
 
@@ -38,3 +38,41 @@ int sum(int number){
     }
     return result;
 }
+*/
+
+// Задача 29
+
+int quantity = prompt("Введите число элементов массива: ");
+
+int[] array = rand(quantity);
+PrintArr(array, quantity);
+
+
+int prompt(string massage)
+{
+    Console.Write(massage);
+    int answer = Convert.ToInt32(Console.ReadLine());
+    return answer;
+}
+
+int[] rand(int size)
+{
+    Random rnd = new Random();
+    int[] arr = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = rnd.Next(1, 10);
+    }
+    return arr;
+}
+
+void PrintArr(int[] arr, int size){
+
+    for(int i = 0; i < size; i++){
+        Console.Write(arr[i] + " ");
+    }
+}
+
+
+
+
