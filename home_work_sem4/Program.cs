@@ -1,19 +1,29 @@
 ﻿// Задача 25
 /*
-int num = prompt("Введите число возводимое в степень: "); 
+int num = prompt("Введите число возводимое в степень: ");
 int deg = prompt("Введите степень: ");
 Console.WriteLine(raising(num, deg));
 
-int prompt(string massage){
+int prompt(string massage)
+{
     Console.Write(massage);
-    int answer = Convert.ToInt32(Console.ReadLine()); 
-    return answer; 
+    int answer = Convert.ToInt32(Console.ReadLine());
+    return answer;
 }
 
-int raising(int number, int degree){
+int raising(int number, int degree)
+{
     int result = 1;
-    for(int i = 1; i <= degree; i++){
-        result *=number;
+    if (degree == 0)
+    {
+        result = 1;
+    }
+    else
+    {
+        for (int i = 1; i <= degree; i++)
+        {
+            result *= number;
+        }
     }
     return result;
 }
@@ -41,7 +51,7 @@ int sum(int number){
 */
 
 // Задача 29
-
+/*
 int quantity = prompt("Введите число элементов массива: ");
 
 int[] array = rand(quantity);
@@ -72,7 +82,7 @@ void PrintArr(int[] arr, int size){
         Console.Write(arr[i] + " ");
     }
 }
-
+*/
 
 
 
