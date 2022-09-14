@@ -42,8 +42,8 @@ int SearchEvenNumber(int[] arr){
 */
 
 
-// Задача 36: Найдите сумму элементов, стоящих на нечётных позициях.
-
+// Задача 36:
+/*
 int quantity = prompt("Введите число элементов массива: ");
 int[] array = CreateArray(quantity);
 PrintArr(array);
@@ -84,9 +84,61 @@ int SumOdd(int[] arr){
     }
     return count;
 }
-
-
+*/
 
 
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
+int quantity = prompt("Введите число элементов массива: ");
+double[] array = CreateArray(quantity);
+PrintArr(array);
+Console.WriteLine("");
+double result = DifferenceMaxMin(array);
+Console.WriteLine($"Разность между максимальным и минимальным элементом массива: {result}");
+
+int prompt(string massage)
+{
+    Console.Write(massage);
+    int answer = Convert.ToInt32(Console.ReadLine());
+    return answer;
+}
+
+double[] CreateArray(int size)
+{
+    Random rnd = new Random();
+    double[] arr = new double[size];
+    for (int i = 0; i < size; i++)
+    {
+        arr[i] = rnd.Next(1, 10) + Math.Round(rnd.NextDouble(), 2);
+    }
+    return arr;
+}
+
+void PrintArr(double[] arr)
+{
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write(arr[i] + " ");
+    }
+}
+
+double DifferenceMaxMin(double[] arr)
+{
+    double max = arr[0];
+    double min = arr[0];
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if(arr[i] > max){
+            max = arr[i];
+        }    
+        else if(arr[i] < max && arr[i] < min){
+            min = arr[i];
+        }
+    }
+    Console.WriteLine($"Максимум: {max}, \nМинимум: {min}");
+
+    double diff = max - min;
+    return diff;
+}
