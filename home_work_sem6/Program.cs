@@ -1,5 +1,5 @@
 ﻿// Задача 41
-
+/*
 Console.WriteLine("Введите числа через запятую: ");
 string input = Console.ReadLine();
 int[] numbers = ParseStringToArray(input);
@@ -53,4 +53,25 @@ int GetCountNumbersInString(string input)
             count++;
     }
     return count;
+}
+*/
+
+// Задача 43
+
+double b1 = prompt("введите значение b1 = ");
+double k1 = prompt("введите число k1 = ");
+double b2 = prompt("введите значение b2 = ");
+double k2 = prompt("введите число k2 = ");
+
+double numberX = (b2 - b1)/(k1 - k2);
+double numberY = k2 * numberX + b2;
+
+Console.WriteLine($"Точка пересечения двух прямых: [{numberX},{numberY}]");
+
+
+double prompt(string massage)
+{
+    Console.Write(massage);
+    double answer = Convert.ToInt32(Console.ReadLine());
+    return answer;
 }
