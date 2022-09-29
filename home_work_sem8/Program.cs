@@ -52,7 +52,7 @@ int[,] SortToLower(int[,] array)
 */
 
 //Задача 56
-
+/*
 int[,] array = CreateArray();
 
 print(array);
@@ -95,6 +95,59 @@ void print(int[,] arr){
     for (int i = 0; i < arr.GetLength(0); i++){
         for (int j = 0; j < arr.GetLength(1); j++){
             Console.Write($"{array[i,j]}   ");
+        }
+        Console.WriteLine();
+    }
+}
+*/
+
+// Задача 58
+
+int[,] array1 = CreateArray();
+int[,] array2 = CreateArray();
+int[,] ArrayResult = new int[4, 4];
+print(array1);
+Console.WriteLine();
+print(array2);
+Console.WriteLine();
+
+
+
+if (array1.GetLength(0) != array2.GetLength(1))
+{
+    Console.WriteLine("Нельзя перемножить матрицы! ");
+    return;
+}
+for (int i = 0; i < array1.GetLength(0); i++)
+{
+    for (int j = 0; j < array2.GetLength(1); j++)
+    {
+        ArrayResult[i, j] = 0;
+        for (int k = 0; k < array1.GetLength(1); k++)
+        {
+            ArrayResult[i, j] += array1[i, k] * array2[k, j];
+        }
+    }
+}
+
+print(ArrayResult);
+
+int[,] CreateArray()
+{
+    Random rnd = new Random();
+    int[,] arr = new int[4,4];
+    for (int i = 0; i < arr.GetLength(0); i++){
+        for (int j = 0; j < arr.GetLength(1); j++){
+            arr[i,j] = rnd.Next(1, 10);
+        }
+    }
+    return arr;
+}
+
+void print(int[,] arr){
+    for (int i = 0; i < arr.GetLength(0); i++){
+        for (int j = 0; j < arr.GetLength(1); j++){
+            Console.Write($"{arr[i,j]} ");
         }
         Console.WriteLine();
     }
