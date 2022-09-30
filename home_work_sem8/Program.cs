@@ -156,7 +156,6 @@ void print(int[,] arr){
 
 // Задача 62
 
-
 int row = prompt("Введите количесво строк = ");
 int col = prompt("Введите количество столбцов = ");
 
@@ -167,37 +166,43 @@ print(array);
 int[,] CreateSpiralArray(int rows, int column)
 {
     Random rnd = new Random();
-    int[,] arr = new int[rows,column];
-    
+    int[,] arr = new int[rows, column];
+
     int count = 1;
     int i = 0;
     int j = 0;
 
-while (count <= rows * column)
-{
-  arr[i, j] = count;
-  count++;
-  if (i <= j + 1 && i + j < column - 1)
-    j++;
-  else if (i < j && i + j >= rows - 1)
-    i++;
-  else if (i >= j && i + j > column - 1)
-    j--;
-  else
-    i--;
-}
+    while (count <= rows * column)
+    {
+        arr[i, j] = count;
+        count++;
+        if (i <= j + 1 && i + j < column - 1)
+            j++;
+        else if (i < j && i + j >= rows - 1)
+            i++;
+        else if (i >= j && i + j > column - 1)
+            j--;
+        else
+            i--;
+    }
     return arr;
 }
 
 
-void print(int[,] arr){
-    for (int i = 0; i < arr.GetLength(0); i++){
-        for (int j = 0; j < arr.GetLength(1); j++){
-           if(arr[i,j] / 10 <= 0 ){
-            Console.Write($"{arr[i,j]}  ");
-           }else{
-            Console.Write($"{arr[i,j]} ");
-           }
+void print(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            if (arr[i, j] / 10 <= 0)
+            {
+                Console.Write($"{arr[i, j]}  ");
+            }
+            else
+            {
+                Console.Write($"{arr[i, j]} ");
+            }
         }
         Console.WriteLine();
     }
@@ -209,3 +214,4 @@ int prompt(string massage)
     int answer = Convert.ToInt32(Console.ReadLine());
     return answer;
 }
+
