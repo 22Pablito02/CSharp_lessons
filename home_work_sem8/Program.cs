@@ -198,10 +198,12 @@ void print(int[,] arr)
             if (arr[i, j] / 10 <= 0)
             {
                 Console.Write($"{arr[i, j]}  ");
+                Thread.Sleep(100);
             }
             else
             {
                 Console.Write($"{arr[i, j]} ");
+                Thread.Sleep(100);
             }
         }
         Console.WriteLine();

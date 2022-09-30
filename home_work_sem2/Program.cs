@@ -20,26 +20,19 @@ void SecondNum(int number){
 
 
 // Задача 13
-
+/*
 Console.WriteLine("Введите число");
 string num = Convert.ToString(Console.ReadLine());
+search(num);
 
-int ThirdNum = search(num);
-
-int search(string number){
+void search(string number){
 if (number.Length > 2){
-    Console.WriteLine(number[2]);
-    return number[2];
+    Console.WriteLine($"Третья цифра = {number[2]}");
 }else{
     Console.WriteLine("Третьей цифры нет!");
-    return 1;
 }
 }
-
-void print(int value){
-    Console.WriteLine("Третья цифра = " + value);
-}
-
+*/
 
 
 // Задача 15
